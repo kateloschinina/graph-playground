@@ -4,7 +4,6 @@ const numberOfVertices = 100;
 function draw () {
     const windowSize = { width: window.innerWidth, height: window.innerHeight };
     let cx = setUpCanvas(windowSize);
-    drawDot(cx, 100, 100);
     drawVertices(cx, windowSize, numberOfVertices);
     return true;
 }
