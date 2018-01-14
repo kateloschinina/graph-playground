@@ -8,6 +8,13 @@ function draw () {
     return true;
 }
 
+class Dot {
+    constructor (x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
 function drawDot (cx, x, y, r = 3) {
     cx.beginPath();
     cx.arc(x, y, r, 0, Math.PI * 2);
