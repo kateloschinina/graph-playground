@@ -13,20 +13,21 @@ class Dot {
         this.x = x;
         this.y = y;
     }
-}
 
-function drawDot (cx, x, y, r = 3) {
-    cx.beginPath();
-    cx.arc(x, y, r, 0, Math.PI * 2);
-    cx.fillStyle = verticesColor;
-    cx.fill();
+    drawDot (cx, color, r = 3) {
+        cx.beginPath();
+        cx.arc(this.x, this.y, r, 0, Math.PI * 2);
+        cx.fillStyle = color;
+        cx.fill();
+    }
 }
 
 function drawVertices (cx, windowSize, numberOfVertices) {
     for (let i = 0; i < numberOfVertices; i++) {
         const x = Math.random() * windowSize.width;
         const y = Math.random() * windowSize.height;
-        drawDot(cx, x, y);
+        const dot = new Dot(x, y);
+        dot.drawDot(cx, verticesColor);
     };
 }
 
