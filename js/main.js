@@ -1,5 +1,5 @@
 const verticesColor = "#77d";
-const edgesColor = "#ccc";
+const edgesColor = "#77d";
 const numberOfVertices = 500;
 
 function draw () {
