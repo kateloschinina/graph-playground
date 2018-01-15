@@ -5,11 +5,7 @@ const numberOfVertices = 100;
 function draw () {
     const windowSize = { width: window.innerWidth, height: window.innerHeight };
     let cx = setUpCanvas(windowSize);
-    drawVertices(cx, windowSize, numberOfVertices);
-
-    const dot1 = new Dot(10, 10);
-    const dot2 = new Dot(100, 100);
-    const edge = new Edge(dot1, dot2);
+    drawGraph(cx, windowSize, numberOfVertices);
     edge.drawEdge(cx, edgesColor);
     return true;
 }
@@ -45,12 +41,18 @@ class Edge {
     }
 }
 
-function drawVertices (cx, windowSize, numberOfVertices) {
+function drawGraph (cx, windowSize, numberOfVertices) {
+    const arrayOfVertices = [];
     for (let i = 0; i < numberOfVertices; i++) {
         const x = Math.random() * windowSize.width;
         const y = Math.random() * windowSize.height;
         const dot = new Dot(x, y);
         dot.drawDot(cx, verticesColor);
+        if (i > 1) {
+            const edge = new Edge(arrayOfVertices[i-1], dot);
+            edge.drawEdge(cx, edgesColor);
+        }
+        arrayOfVertices.push(dot);
     };
 }
 
