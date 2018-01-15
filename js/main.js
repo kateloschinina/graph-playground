@@ -1,12 +1,11 @@
 const verticesColor = "#77d";
 const edgesColor = "#ccc";
-const numberOfVertices = 100;
+const numberOfVertices = 500;
 
 function draw () {
     const windowSize = { width: window.innerWidth, height: window.innerHeight };
     let cx = setUpCanvas(windowSize);
     drawGraph(cx, windowSize, numberOfVertices);
-    edge.drawEdge(cx, edgesColor);
     return true;
 }
 
